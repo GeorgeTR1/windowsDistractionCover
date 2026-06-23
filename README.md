@@ -1,3 +1,4 @@
+Note: This is for Windows only. There are no plans to support other operating systems.
 ### Discription
 Creates a window with a black background that always stays on top of any other windows. Move and resize it as you would like, and then double click in the window to change it to a plain black rectangle with no borders or shadow. This is intended to cover up portions of the screen that you don't want to see for some reason, presumably because they are distracting. Double click in the window again to change it back to the bordered version to resize or move it again, or to close it. Just download the executable file from releases, there are no dependencies that aren't part of the OS.
 
