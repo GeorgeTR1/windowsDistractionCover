@@ -16,3 +16,5 @@ The source code is just a single C file. Other than the three `#pragma` directiv
 - This [gist](https://gist.github.com/mmozeiko/81e9c0253cc724638947a53b826888e9) by [@mmozeiko](https://github.com/mmozeiko) for information on how to make compile tiny Windows binaries using MSVC
 - *Programming Windows, 5th Ed.* by Charles Petzold for general information on how to program with the Win32 API
 - [Windows 95 API reference](https://archive.org/download/nt40_win95_sdk1996/nt40_win95_sdk1996.iso/DOC%2FHLP%2FWIN32SDK.HLP), available on the Internet Archive as a .HLP file (see [listing](https://archive.org/details/nt40_win95_sdk1996)). For help opening .HLP files on modern systems, see [here](https://eileenslounge.com/viewtopic.php?p=281561#p281561)
+
+*No generative AI was used in any part of the creation of this software.*
