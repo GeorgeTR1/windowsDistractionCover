@@ -1,5 +1,10 @@
 @echo off
 
+IF [%1] == [] (
+  echo Expecting a file name to compile
+  exit /b 1
+)
+
 SET ASM=
 REM SET ASM=/FAs
 SET CFLAGS=/nologo /W4 /wd4996 /O2 /GS- %ASM%
