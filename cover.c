@@ -6,7 +6,7 @@
 
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 
-int main() {
+int mainNoCRT() {
    HINSTANCE hInstance = GetModuleHandle(NULL);
    WNDCLASS wndclass = {0};
    HWND hwnd;
@@ -21,7 +21,7 @@ int main() {
    
    RegisterClass(&wndclass);
    
-   hwnd = CreateWindowEx(WS_EX_TOPMOST, //Extended Window Styles
+   hwnd = CreateWindowEx(WS_EX_TOPMOST, // Extended Window Styles
       wndclass.lpszClassName, // window class name
       "Distraction Cover", // window caption
       WS_CAPTION | WS_SIZEBOX | WS_SYSMENU, // window style
@@ -29,7 +29,7 @@ int main() {
       hInstance, // program instance handle
       NULL);
       
-   //ShowWindow (hwnd, iCmdShow);
+   // ShowWindow (hwnd, iCmdShow);
    ShowWindow (hwnd, SW_SHOWNORMAL);
    
    while (GetMessage(&msg, NULL, 0, 0)) {
@@ -37,7 +37,9 @@ int main() {
       DispatchMessage(&msg);
    }
    
-   //since we don't use WinMain the program hangs if we return normally
+   /* apparently there can be race conditions when returning from an entry
+      point due to misbehaved DLLs, so it's safer to use ExitProcess instead of
+      returning directly */
    ExitProcess(0);
 }
 
@@ -53,6 +55,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) 
       } else {
          SetWindowLong(hwnd, GWL_STYLE, WS_POPUP);
       }
+      // required to update the window's style
       ShowWindow(hwnd, SW_SHOW);
       
       return 0;
